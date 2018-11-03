@@ -1,0 +1,29 @@
+{
+    "app_title": "Meme-Viewer",
+    "langs": {
+      "de": "Deutsch",
+      "en": "English"
+    },
+    "filter": {
+      "title": "Filter"
+    },
+    "actions": {
+      "like": "Like",
+      "share": "Share",
+      "download": "Download"
+    },
+    "filter_actions": {
+      "restore": "Restore defaults",
+      "random": "Random",
+      "apply": "Apply filter"
+    },
+    "meme_type": {
+      "all": "All",
+      "img": "Images",
+      "gif": "GIFs"
+    },
+    "placeholders": {
+      "search": "Search..."
+    }
+  }
+  

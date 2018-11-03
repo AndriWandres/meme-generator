@@ -1,0 +1,63 @@
+<!-- Filter side navigation -->
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav 
+    class="sidenav" 
+    fixedInViewport="true" 
+    fixedTopGap="64" 
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async) && filterOpen">
+    <mat-toolbar color="warn" class="filter_header">
+      <span>{{ 'filter.title' | translate }}</span>
+      <span class="spacer"></span>
+      <button mat-icon-button (click)="close()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-toolbar>
+    <form>
+      <!-- Search field -->
+      <mat-form-field>
+        <input name="search" matInput type="text" [placeholder]="'placeholders.search' | translate" [(ngModel)]="filterValue">
+        <button mat-button matSuffix mat-icon-button>
+          <mat-icon>send</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <br><br>
+
+      <!-- Type selection -->
+      <mat-radio-group name="type" [(ngModel)]="filterType">
+        <label class="mat-subheading-2">Type</label>
+        <mat-radio-button *ngFor="let type of types" [value]="type">
+          {{ 'meme_type.' + type | translate }}
+        </mat-radio-button>
+      </mat-radio-group>
+
+      <br><br>
+
+      <!-- Filter actions -->
+      <button mat-raised-button color="primary" (click)="restoreDefaults()">
+        {{ 'filter_actions.restore' | translate }}
+        <mat-icon>restore</mat-icon>
+      </button>
+      <button mat-raised-button color="primary" (click)="randomFilter()">
+        {{ 'filter_actions.random' | translate }}
+        <mat-icon>shuffle</mat-icon>
+      </button>
+      <br>
+      <button mat-raised-button color="accent" (click)="applyFilter()">
+        {{ 'filter_actions.apply' | translate }}
+        <mat-icon>done</mat-icon>
+      </button>
+    </form>
+
+    <!-- Bottom toolbar -->
+    <mat-toolbar color="warn" class="filter_footer">
+      <span class="mat-body-1">Created by Andri Wandres</span>
+      <span class="spacer"></span>
+      <span class="mat-body-1">Copyright &copy; 2018</span>
+    </mat-toolbar>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

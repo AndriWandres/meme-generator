@@ -1,0 +1,40 @@
+@import '~@angular/material/theming';
+
+mat-sidenav-container {
+  height: 100%;
+  background-color: #37474F;
+}
+
+mat-sidenav {
+  width: 25%;
+  border: none;
+  @include mat-elevation(10);
+}
+
+form {
+  padding: 10%;
+}
+
+mat-radio-group {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+mat-radio-button {
+  margin: 10px;
+}
+
+button[mat-raised-button] {
+  margin: 7px 5px;
+}
+
+.filter_footer {
+  position: absolute;
+  bottom: 0;
+}
+
+mat-sidenav-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

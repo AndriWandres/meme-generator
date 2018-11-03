@@ -1,0 +1,36 @@
+<button mat-fab>
+  <mat-icon>arrow_back</mat-icon>
+</button>
+
+<div class="frame">
+  <mat-toolbar color="warn" class="meme_header">
+    <span class="mat-heading-1">Some meme</span>
+    <span class="spacer"></span>
+    <mat-icon>more_vert</mat-icon>
+  </mat-toolbar>
+
+  <div class="content">
+
+  </div>
+
+  <!-- Actions -->
+  <mat-toolbar color="warn" class="meme_actions">
+    <button mat-raised-button color="accent">
+      <span>{{ 'actions.like' | translate }}</span>
+      <mat-icon>thumb_up</mat-icon>
+    </button>
+    <span class="spacer"></span>
+    <button mat-raised-button color="primary">
+      <span>{{ 'actions.share' | translate }}</span>
+      <mat-icon>share</mat-icon>
+    </button>
+    <button mat-raised-button color="primary">
+      <span>{{ 'actions.download' | translate }}</span>
+      <mat-icon>get_app</mat-icon>
+    </button>
+  </mat-toolbar>
+</div>
+
+<button mat-fab>
+  <mat-icon>arrow_forward</mat-icon>
+</button>
