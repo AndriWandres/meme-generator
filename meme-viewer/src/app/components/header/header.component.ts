@@ -1,5 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { LocalStorage } from 'ngx-store';
+import { LocalStorage, SessionStorage } from 'ngx-store';
 import { TranslateService } from '@ngx-translate/core';
 import { MatDialog } from '@angular/material';
 import { HelpDialogComponent } from '../help-dialog/help-dialog.component';
@@ -15,6 +15,8 @@ export class HeaderComponent implements OnInit {
   @Output() filterToggle = new EventEmitter<void>();
 
   @LocalStorage() selectedLang: LangAbbreviation = 'de';
+
+  @SessionStorage() filterOpen = true;
 
   readonly langs: LangAbbreviation[] = ['de', 'en'];
 

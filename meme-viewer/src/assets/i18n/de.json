@@ -18,12 +18,24 @@
       "apply": "Filter anwenden"
     },
     "meme_type": {
+      "label": "Typ",
       "all": "Alle",
       "img": "Bilder",
       "gif": "GIFs"
     },
     "placeholders": {
       "search": "Schlagwort eingeben..."
-    }
+    },
+    "tooltips": {
+      "open_filter": "Filter öffnen",
+      "close_filter": "Filter schliessen",
+      "help": "Hilfe",
+      "language": "Sprache auswählen",
+      "submit": "Absenden",
+      "next_meme": "Nächstes Meme",
+      "previous_meme": "Letztes Meme"
+    },
+    "provided_by": "Bilder zur Verfügung gestellt durch",
+    "created_by": "Erstellt von Andri Wandres"
   }
   

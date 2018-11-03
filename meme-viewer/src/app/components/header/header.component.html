@@ -1,14 +1,23 @@
 <!-- Header toolbar -->
 <mat-toolbar color="accent">
-  <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="filterToggle.emit()">
+
+  <!-- Filter toggle button -->
+  <button type="button" mat-icon-button (click)="filterToggle.emit()" matTooltipShowDelay="500"
+    [matTooltip]="(filterOpen ? 'tooltips.close_filter' : 'tooltips.open_filter') | translate">
     <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
   </button>
   <span>{{ 'app_title' | translate }}</span>
   <span class="spacer"></span>
-  <button mat-icon-button (click)="openHelp()">
+
+  <!-- Help button -->
+  <button mat-icon-button (click)="openHelp()" matTooltipShowDelay="500"
+    [matTooltip]="'tooltips.help' | translate">
     <mat-icon>help_outline</mat-icon>
   </button>
-  <button mat-icon-button [matMenuTriggerFor]="langMenu">
+
+  <!-- Language button -->
+  <button mat-icon-button [matMenuTriggerFor]="langMenu" matTooltipShowDelay="500"
+    [matTooltip]="'tooltips.language' | translate">
     <mat-icon>language</mat-icon>
   </button>
   <mat-menu #langMenu="matMenu">

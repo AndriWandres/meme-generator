@@ -6,10 +6,13 @@
     fixedTopGap="64" 
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [opened]="!(isHandset$ | async) && filterOpen">
+
+    <!-- Header toolbar -->
     <mat-toolbar color="warn" class="filter_header">
       <span>{{ 'filter.title' | translate }}</span>
       <span class="spacer"></span>
-      <button mat-icon-button (click)="close()">
+      <button mat-icon-button (click)="close()" matTooltipShowDelay="500" matTooltipPosition="right"
+        [matTooltip]="'tooltips.close_filter' | translate">
         <mat-icon>close</mat-icon>
       </button>
     </mat-toolbar>
@@ -17,7 +20,8 @@
       <!-- Search field -->
       <mat-form-field>
         <input name="search" matInput type="text" [placeholder]="'placeholders.search' | translate" [(ngModel)]="filterValue">
-        <button mat-button matSuffix mat-icon-button>
+        <button mat-button matSuffix mat-icon-button matTooltipShowDelay="500" matTooltipPosition="right"
+          [matTooltip]="'tooltips.submit' | translate">
           <mat-icon>send</mat-icon>
         </button>
       </mat-form-field>
@@ -26,7 +30,7 @@
 
       <!-- Type selection -->
       <mat-radio-group name="type" [(ngModel)]="filterType">
-        <label class="mat-subheading-2">Type</label>
+        <label class="mat-subheading-2">{{ 'meme_type.label' | translate }}</label>
         <mat-radio-button *ngFor="let type of types" [value]="type">
           {{ 'meme_type.' + type | translate }}
         </mat-radio-button>
@@ -50,21 +54,24 @@
       </button>
 
       <div class="img-provider">
-        <span>Images provided by</span>
+        <span>{{ 'provided_by' | translate }}</span>
         <a href="https://imgur.com/" target="_blank">
           <img src="../../../assets/images/imgur_logo.png" alt="Imgur Logo" width="100px" height="100px">
         </a>
       </div>
     </form>
 
-    <!-- Bottom toolbar -->
+    <!-- Footer toolbar -->
     <mat-toolbar color="warn" class="filter_footer">
-      <span class="mat-body-1">Created by Andri Wandres</span>
+      <span class="mat-body-1">{{ 'created_by' | translate }}</span>
       <span class="spacer"></span>
       <span class="mat-body-1">Copyright &copy; 2018</span>
+      <span class="spacer"></span>
+      <a href="https://github.com/AndriWandres/meme-generator" target ="_blank" class="mat-body-1">GitHub</a>
     </mat-toolbar>
   </mat-sidenav>
   <mat-sidenav-content>
+    <!-- Main content -->
     <ng-content></ng-content>
   </mat-sidenav-content>
 </mat-sidenav-container>
