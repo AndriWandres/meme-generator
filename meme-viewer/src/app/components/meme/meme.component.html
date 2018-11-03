@@ -1,8 +1,9 @@
 <!-- Backward button -->
-<button mat-fab (click)="previous()" matTooltipShowDelay="500" [matTooltip]="'tooltips.previous_meme' | translate">
+<button class="previous" mat-fab (click)="previous()" matTooltipShowDelay="500" [matTooltip]="'tooltips.previous_meme' | translate">
   <mat-icon>arrow_back</mat-icon>
 </button>
 
+<!-- Meme frame -->
 <div class="frame">
   <mat-toolbar color="warn" class="meme_header">
     <span class="mat-heading-1" *ngIf="currentMeme" class="meme_heading" [title]="currentMeme.title">
@@ -36,6 +37,6 @@
 </div>
 
 <!-- Forward button -->
-<button mat-fab (click)="next()" matTooltipShowDelay="500" [matTooltip]="'tooltips.next_meme' | translate">
+<button class="next" mat-fab (click)="next()" matTooltipShowDelay="500" [matTooltip]="'tooltips.next_meme' | translate">
   <mat-icon>arrow_forward</mat-icon>
 </button>

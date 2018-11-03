@@ -36,6 +36,10 @@
       "previous_meme": "Previous meme"
     },
     "provided_by": "Images provided by",
-    "created_by": "Created by Andri Wandres"
+    "created_by": "Created by Andri Wandres",
+    "copied_snackbar": "Copied link to clipboard",
+    "help": {
+      "close": "Close"
+    }
   }
   

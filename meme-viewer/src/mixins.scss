@@ -1,0 +1,10 @@
+
+@mixin handset {
+  @media screen and (max-width: 599.99px) and (orientation: portrait), (max-width: 959.99px) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin internet-explorer {
+    @content;
+}

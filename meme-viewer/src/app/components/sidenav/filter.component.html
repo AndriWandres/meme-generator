@@ -3,7 +3,7 @@
   <mat-sidenav 
     class="sidenav" 
     fixedInViewport="true" 
-    fixedTopGap="64" 
+    [fixedTopGap]="(isHandset$ | async) ? 56 : 64" 
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [opened]="!(isHandset$ | async) && filterOpen">
 
@@ -47,7 +47,7 @@
         {{ 'filter_actions.random' | translate }}
         <mat-icon>shuffle</mat-icon>
       </button>
-      <br>
+      <br *ngIf="isHandset | async">
       <button mat-raised-button color="accent" (click)="applyFilter()">
         {{ 'filter_actions.apply' | translate }}
         <mat-icon>done</mat-icon>
@@ -65,7 +65,7 @@
     <mat-toolbar color="warn" class="filter_footer">
       <span class="mat-body-1">{{ 'created_by' | translate }}</span>
       <span class="spacer"></span>
-      <span class="mat-body-1">Copyright &copy; 2018</span>
+      <span class="mat-body-1" *ngIf="!(isHandset$ | async)">Copyright &copy; 2018</span>
       <span class="spacer"></span>
       <a href="https://github.com/AndriWandres/meme-generator" target ="_blank" class="mat-body-1">GitHub</a>
     </mat-toolbar>

@@ -7,7 +7,7 @@
     "filter": {
       "title": "Filter"
     },
-    "actions": {
+    "actions": {  
       "like": "Gefällt mir",
       "share": "Teilen",
       "download": "Herunterladen"
@@ -36,6 +36,10 @@
       "previous_meme": "Letztes Meme"
     },
     "provided_by": "Bilder zur Verfügung gestellt durch",
-    "created_by": "Erstellt von Andri Wandres"
+    "created_by": "Erstellt von Andri Wandres",
+    "copied_snackbar": "Der Link zum Teilen wurde in die Zwischenablage kopiert",
+    "help": {
+      "close": "Schliessen"
+    }
   }
   

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MemeService } from 'src/app/services/meme.service';
 import { ImgurImage } from 'src/app/models/imgur-image';
 import { MatSnackBar } from '@angular/material';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-meme',
@@ -18,8 +19,9 @@ export class MemeComponent implements OnInit {
   }
 
   constructor(
+    private readonly snackbar: MatSnackBar,
     private readonly memeService: MemeService,
-    private readonly snackbar: MatSnackBar
+    private readonly translateService: TranslateService
   ) { }
 
   ngOnInit() {
@@ -28,7 +30,6 @@ export class MemeComponent implements OnInit {
       if (this.memes.length > 0) {
         this.currentMeme = this.memes[0];
       }
-      console.log(this.memes);
     });
   }
 
@@ -47,8 +48,11 @@ export class MemeComponent implements OnInit {
     document.execCommand('copy');
     document.body.removeChild(el);
 
-    this.snackbar.open('Copied link to clipboard', 'Close', {
-      duration: 3000,
+    // Show snackbar
+    this.translateService.get(['copied_snackbar', 'help.close']).subscribe(translations => {
+      this.snackbar.open(translations['copied_snackbar'], translations['help.close'], {
+        duration: 4000,
+      });
     });
   }
 
@@ -62,7 +66,6 @@ export class MemeComponent implements OnInit {
     } else {
       this.currentMeme = this.memes[++this.currentIndex];
     }
-    console.log(this.currentMeme);
   }
 
   previous(): void {
@@ -73,6 +76,5 @@ export class MemeComponent implements OnInit {
     if (this.currentIndex !== 0) {
       this.currentMeme = this.memes[--this.currentIndex];
     }
-    console.log(this.currentMeme);
   }
 }
