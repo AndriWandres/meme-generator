@@ -1,6 +1,8 @@
 # Meme-Viewer
 Multimediaprojekt für das Informatikmodul 152 "Multimedia-Inhalte in Webauftritt integrieren" mit einem fiktiven/oder nicht fiktiven Auftraggeber.
 
+Entwickelt wurde die Applikation mithilfe des JavaScript Frameworks [Angular](https://angular.io/) von Google (Version 7.0.4rc).
+
 ### Features
 Mit dieser Applikation lassen sich verschiedenste Arten von Memes abrufen. 
 Der Benutzer hat die Möglichkeit ein Meme zu teilen und dem Meme einen "Like" zu geben. Mit dem eingebauten Filter lassen sich die Memes nach eigenen Schlagwörtern oder nach dem Medientyp (Bild und/oder GIF) filtern.
