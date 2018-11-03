@@ -1,3 +1,4 @@
+import { ImgurGallery } from './imgur-gallery';
 
 export interface ImgurTag {
     name: string;
@@ -15,4 +16,9 @@ export interface ImgurTag {
     logo_hash: string;
     logo_destination_url: string;
     description_annotations: any;
+    items?: ImgurGallery[];
+}
+
+export interface ImgurTagResultSet {
+    data: ImgurTag;
 }

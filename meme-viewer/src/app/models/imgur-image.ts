@@ -22,5 +22,5 @@ export interface ImgurImage {
     favorite: boolean;
     nsfw: boolean;
     vote: string;
-    in_gallery: string;
+    in_gallery: boolean;
 }

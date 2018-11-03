@@ -33,6 +33,17 @@ button[mat-raised-button] {
   bottom: 0;
 }
 
+.img-provider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50%;
+
+  a {
+    padding-left: 20px;
+  }
+}
+
 mat-sidenav-content {
   display: flex;
   justify-content: center;

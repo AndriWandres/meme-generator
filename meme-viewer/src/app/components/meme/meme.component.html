@@ -1,16 +1,23 @@
-<button mat-fab>
+<button mat-fab (click)="previous()">
   <mat-icon>arrow_back</mat-icon>
 </button>
 
 <div class="frame">
   <mat-toolbar color="warn" class="meme_header">
-    <span class="mat-heading-1">Some meme</span>
+    <span class="mat-heading-1" *ngIf="currentMeme" class="meme_heading" [title]="currentMeme.title">
+      {{ currentMeme.title }}
+    </span>
     <span class="spacer"></span>
-    <mat-icon>more_vert</mat-icon>
   </mat-toolbar>
 
+  <!-- Media content -->
   <div class="content">
-
+    <a *ngIf="currentMeme" [href]="currentMeme.link" target="_blank">
+      <img *ngIf="!isMp4" [src]="currentMeme.link" height="50%" width="auto">
+      <video *ngIf="isMp4" loop>
+        <source [src]="currentMeme.link" type="video/mp4" />
+      </video>
+    </a>
   </div>
 
   <!-- Actions -->
@@ -20,17 +27,13 @@
       <mat-icon>thumb_up</mat-icon>
     </button>
     <span class="spacer"></span>
-    <button mat-raised-button color="primary">
+    <button mat-raised-button color="primary" (click)="share()">
       <span>{{ 'actions.share' | translate }}</span>
       <mat-icon>share</mat-icon>
-    </button>
-    <button mat-raised-button color="primary">
-      <span>{{ 'actions.download' | translate }}</span>
-      <mat-icon>get_app</mat-icon>
     </button>
   </mat-toolbar>
 </div>
 
-<button mat-fab>
+<button mat-fab (click)="next()">
   <mat-icon>arrow_forward</mat-icon>
 </button>

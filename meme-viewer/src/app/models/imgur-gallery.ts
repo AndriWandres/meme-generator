@@ -1,6 +1,10 @@
 import { ImgurImage } from './imgur-image';
 import { ImgurTag } from './imgur-tag';
 
+export interface ImgurGalleryResultSet {
+    data: ImgurGallery[];
+}
+
 export interface ImgurGallery {
     id: string;
     title: string;

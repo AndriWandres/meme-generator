@@ -20,7 +20,8 @@ import {
   MatToolbarModule,
   MatInputModule,
   MatRadioModule,
-  MatCardModule
+  MatCardModule,
+  MatSnackBarModule
 } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { HelpDialogComponent } from './components/help-dialog/help-dialog.component';
@@ -56,6 +57,7 @@ export function createTranslateLoader(http: HttpClient) {
     HttpClientModule,
     MatDialogModule,
     MatInputModule,
+    MatSnackBarModule,
     FormsModule,
     MatCardModule,
     MatRadioModule,
