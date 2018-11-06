@@ -1,7 +1,7 @@
 # Meme-Viewer
 Multimediaprojekt für das Informatikmodul 152 "Multimedia-Inhalte in Webauftritt integrieren" mit einem fiktiven/oder nicht fiktiven Auftraggeber.
 
-Gehostet wird die Applikation über [GitHub Pages](https://andriwandres.github.io/).
+Gehostet wird die Applikation über [GitHub Pages](https://github.com/AndriWandres/AndriWandres.github.io) unter folgender URL: https://andriwandres.github.io/
 
 Entwickelt wurde die Applikation mithilfe des JavaScript Frameworks [Angular](https://angular.io/) von Google (Version 7.0.4rc).
 
