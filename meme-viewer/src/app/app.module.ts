@@ -9,7 +9,7 @@ import { WebStorageModule } from 'ngx-store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { FilterComponent } from './components/sidenav/filter.component';
+import { FilterComponent } from './components/filter/filter.component';
 import {
   MatButtonModule,
   MatDialogModule,

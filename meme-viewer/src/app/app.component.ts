@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { FilterComponent } from './components/sidenav/filter.component';
+import { FilterComponent } from './components/filter/filter.component';
 import { MemeComponent } from './components/meme/meme.component';
 
 @Component({
