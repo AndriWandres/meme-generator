@@ -6,7 +6,6 @@ import { MatSidenav } from '@angular/material';
 import { SessionStorage } from 'ngx-store';
 
 type FilterType = 'all' | 'img' | 'gif';
-type SidenavMode = 'over' | 'side';
 
 @Component({
   selector: 'app-filter',
