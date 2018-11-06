@@ -47,7 +47,7 @@
         {{ 'filter_actions.random' | translate }}
         <mat-icon>shuffle</mat-icon>
       </button>
-      <br *ngIf="isHandset | async">
+      <br *ngIf="isHandset$ | async">
       <button mat-raised-button color="accent" (click)="applyFilter()">
         {{ 'filter_actions.apply' | translate }}
         <mat-icon>done</mat-icon>
