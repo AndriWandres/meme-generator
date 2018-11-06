@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, Output, EventEmitter } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -18,6 +18,9 @@ export class FilterComponent {
 
   @SessionStorage() filterOpen = true;
   @SessionStorage() filterType: FilterType = 'all';
+
+  @Output() filterSearch = new EventEmitter<string>(true);
+  @Output() restoreDefault = new EventEmitter<void>(true);
 
   readonly types: FilterType[] = ['all', 'img', 'gif'];
 
@@ -40,14 +43,18 @@ export class FilterComponent {
   }
 
   restoreDefaults(): void {
-    /* */
+    this.filterValue = '';
+    this.filterType = 'all';
+    this.restoreDefault.emit();
   }
 
   randomFilter(): void {
-    /* */
+    this.restoreDefault.emit();
   }
 
   applyFilter(): void {
-    /* */
+    if (this.filterValue) {
+      this.filterSearch.emit(this.filterValue);
+    }
   }
 }

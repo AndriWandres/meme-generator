@@ -1,12 +1,15 @@
 <!-- Help dialog -->
-<h2 mat-dialog-title>Help - Video</h2>
+<h2 mat-dialog-title>{{ 'help.title' | translate }}</h2>
 
 <mat-dialog-content>
-
+  <span>{{ 'help.message' | translate }}</span>
+  <video controls preload alt="Video tutorial on how to use this app">
+    <source src="../../../assets/video/tutorial.mp4" type="video/mp4">
+  </video>
 </mat-dialog-content>
 
 <!-- Dialog actions -->
 <mat-dialog-actions>
   <span class="spacer"></span>
-  <button mat-raised-button mat-dialog-close color="warn">Schliessen</button>
+  <button mat-raised-button mat-dialog-close color="warn">{{ 'help.close' | translate }}</button>
 </mat-dialog-actions>

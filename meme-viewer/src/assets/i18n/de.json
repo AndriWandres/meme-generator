@@ -35,11 +35,13 @@
       "next_meme": "Nächstes Meme",
       "previous_meme": "Letztes Meme"
     },
-    "provided_by": "Bilder zur Verfügung gestellt durch",
+    "provided_by": "Bilder werden zur Verfügung gestellt durch",
     "created_by": "Erstellt von Andri Wandres",
     "copied_snackbar": "Der Link zum Teilen wurde in die Zwischenablage kopiert",
     "help": {
-      "close": "Schliessen"
+      "close": "Schliessen",
+      "title": "Hilfe - Video",
+      "message": "Es folgt eine kleine Video-Anleitung, um den Umgang mit dem Meme-Viewer zu demonstrieren. Viel Spass!"
     }
   }
   

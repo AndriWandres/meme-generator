@@ -10,7 +10,6 @@
 
 div.frame {
   @include mat-elevation(10);
-  max-width: 100vh;
 }
 
 div.content {

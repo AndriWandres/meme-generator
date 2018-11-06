@@ -39,7 +39,9 @@
     "created_by": "Created by Andri Wandres",
     "copied_snackbar": "Copied link to clipboard",
     "help": {
-      "close": "Close"
+      "close": "Close",
+      "title": "Help - Video",
+      "message": "Here is a short video tutorial on how to use the Meme-Viewer. Have fun!"
     }
   }
   

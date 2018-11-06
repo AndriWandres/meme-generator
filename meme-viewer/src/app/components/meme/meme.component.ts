@@ -10,7 +10,7 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./meme.component.scss']
 })
 export class MemeComponent implements OnInit {
-  currentIndex = 0;
+  currentIndex;
   currentMeme: ImgurImage;
   memes: ImgurImage[];
 
@@ -25,12 +25,7 @@ export class MemeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.memeService.$getMemes().subscribe(memes => {
-      this.memes = memes;
-      if (this.memes.length > 0) {
-        this.currentMeme = this.memes[0];
-      }
-    });
+    this.onRestoreDefault();
   }
 
   open(): void {
@@ -38,6 +33,7 @@ export class MemeComponent implements OnInit {
   }
 
   share(): void {
+    // Copy link to clipboard
     const el = document.createElement('textarea');
     el.value = this.currentMeme.link;
     el.setAttribute('readonly', '');
@@ -50,8 +46,10 @@ export class MemeComponent implements OnInit {
 
     // Show snackbar
     this.translateService.get(['copied_snackbar', 'help.close']).subscribe(translations => {
-      this.snackbar.open(translations['copied_snackbar'], translations['help.close'], {
-        duration: 4000,
+      const message = translations['copied_snackbar'];
+      const action = translations['help.close'];
+      this.snackbar.open(message, action, {
+        duration: 5000,
       });
     });
   }
@@ -76,5 +74,25 @@ export class MemeComponent implements OnInit {
     if (this.currentIndex !== 0) {
       this.currentMeme = this.memes[--this.currentIndex];
     }
+  }
+
+  onFilterSearch(query: string): void {
+    this.memeService.$getMemesQuery(query).subscribe(memes => {
+      this.memes = memes;
+      if (this.memes.length > 0) {
+        this.currentMeme = this.memes[0];
+        this.currentIndex = 0;
+      }
+    });
+  }
+
+  onRestoreDefault(): void {
+    this.memeService.$getMemes().subscribe(memes => {
+      this.memes = memes;
+      if (this.memes.length > 0) {
+        this.currentMeme = this.memes[0];
+        this.currentIndex = 0;
+      }
+    });
   }
 }

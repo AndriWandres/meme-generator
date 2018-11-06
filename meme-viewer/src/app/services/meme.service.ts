@@ -29,10 +29,14 @@ export class MemeService {
     );
   }
 
-  $getMemesQuery(query: string): Observable<ImgurGallery> {
+  $getMemesQuery(query: string): Observable<ImgurImage[]> {
     const url = `https://api.imgur.com/3/gallery/search/viral/day?q=${query}`;
 
-    return this.http.get<ImgurGallery>(url, this.options);
+    return this.http.get<ImgurGalleryResultSet>(url, this.options).pipe(
+      map(gallery => gallery.data),
+      map(this.extractImages),
+      map(this.shuffle)
+    );
   }
 
   $getMemesRandom(): Observable<any> {

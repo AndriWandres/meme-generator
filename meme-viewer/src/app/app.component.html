@@ -1,5 +1,5 @@
 
-<app-filter>
+<app-filter (filterSearch)="filterSearch($event)" (restoreDefault)="restoreDefault()">
   <app-header (filterToggle)="toggleFilter()"></app-header>
   <app-meme></app-meme>
 </app-filter>

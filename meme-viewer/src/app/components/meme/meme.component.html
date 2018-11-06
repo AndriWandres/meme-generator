@@ -15,9 +15,9 @@
   <!-- Media content -->
   <div class="content">
     <a *ngIf="currentMeme" [href]="currentMeme.link" target="_blank">
-      <img *ngIf="!isMp4" [src]="currentMeme.link" height="50%" width="auto">
+      <img *ngIf="!isMp4" [src]="currentMeme.link" height="50%" width="auto" alt="Displays a funny meme">
       <video *ngIf="isMp4" loop>
-        <source [src]="currentMeme.link" type="video/mp4" />
+        <source [src]="currentMeme.link" type="video/mp4" alt="Displays a funny video" />
       </video>
     </a>
   </div>
